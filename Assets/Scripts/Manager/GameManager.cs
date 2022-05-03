@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
 
     private CinemachineVirtualCamera CVC;
 
+    private healthBar HB;
+
 
     private void Start() 
     {
         CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
+
+        
     }
 
     private void Update() 

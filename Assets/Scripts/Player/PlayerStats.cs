@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,15 +12,20 @@ public class PlayerStats : MonoBehaviour
 
     private GameManager GM;
 
+    public healthBar healthBar;
+
     private void Start() 
     {
         currentHealth = maxHealth;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
+        healthBar.SetHealth(currentHealth);
         soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.pHit);
         StartCoroutine(VisualIndicator(Color.red));
 

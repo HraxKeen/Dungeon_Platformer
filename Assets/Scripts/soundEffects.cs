@@ -25,5 +25,7 @@ public class soundEffects : MonoBehaviour
 
         sfxInstance = this;
         DontDestroyOnLoad(this);
+
+        
     }
 }
