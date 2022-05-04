@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathChunkParticles: {fileID: 744604841242294605, guid: 8d70ddeb80aac8c488217bd0afbd287a, type: 3}
   deathBloodParticles: {fileID: 4172804419678935151, guid: 247a27ca4aff26c43a8b225440626fc0, type: 3}
+  dropItem: {fileID: 5947727471970649765, guid: 65f133a97b989744f8e77cc0a5866b5a, type: 3}

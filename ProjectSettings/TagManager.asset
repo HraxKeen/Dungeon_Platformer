@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Heal
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Ground
   - Damageable
   - Dead
-  - 
+  - Item
   - 
   - 
   - 
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2936735453
+    locked: 0
+  - name: Item
+    uniqueID: 459859429
     locked: 0

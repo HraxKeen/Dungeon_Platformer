@@ -11,6 +11,7 @@ public class soundEffects : MonoBehaviour
     public AudioClip dSound;
     public AudioClip pHit;
     public AudioClip eHit;
+    public AudioClip heal;
 
 
     public static soundEffects sfxInstance;

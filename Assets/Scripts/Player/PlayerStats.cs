@@ -5,10 +5,10 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
+    [SerializeField] public float maxHealth;
     [SerializeField] private GameObject deathChunkParticle, deathBloodParticle;
 
-    private float currentHealth;
+    public float currentHealth;
 
     private GameManager GM;
 
@@ -20,6 +20,10 @@ public class PlayerStats : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         healthBar.SetMaxHealth(maxHealth);
+    }
+    private void Update()
+    {
+        
     }
 
     public void DecreaseHealth(float amount)
@@ -49,5 +53,16 @@ public class PlayerStats : MonoBehaviour
         GetComponent<SpriteRenderer>().color = color;
         yield return new WaitForSeconds(0.15f);
         GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("Heal"))
+        {
+            other.gameObject.SetActive(false);
+            currentHealth += 30;
+            healthBar.SetHealth(currentHealth);
+            soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.heal);
+            StartCoroutine(VisualIndicator(Color.green));
+        }
     }
 }

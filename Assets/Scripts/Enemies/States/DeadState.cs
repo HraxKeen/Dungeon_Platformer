@@ -5,6 +5,8 @@ using UnityEngine;
 public class DeadState : State
 {
     protected D_DeadState stateData;
+    const float i_dropChance = 1f / 4f;
+    
     public DeadState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_DeadState stateData) : base(etity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -18,6 +20,8 @@ public class DeadState : State
     public override void Enter()
     {
         base.Enter();
+
+        OnEnemyJustDied();
 
         GameObject.Instantiate(stateData.deathBloodParticles, entity.aliveGO.transform.position, stateData.deathBloodParticles.transform.rotation);
         GameObject.Instantiate(stateData.deathChunkParticles, entity.aliveGO.transform.position, stateData.deathChunkParticles.transform.rotation);
@@ -39,6 +43,16 @@ public class DeadState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public void OnEnemyJustDied()
+    {
+        if(Random.Range(0f, 1f) <= i_dropChance)
+        {
+            GameObject.Instantiate(stateData.dropItem, entity.aliveGO.transform.position, stateData.dropItem.transform.rotation);
+            Debug.Log("Item!!");
+        }
+        
     }
 
 }

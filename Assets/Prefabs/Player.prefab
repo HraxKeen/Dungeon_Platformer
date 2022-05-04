@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87281fe24349254c876c72d671c0318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 0}
   knockbackDuration: 0.2
   canMove: 0
   knockbackSpeed: {x: 15, y: 5}
@@ -683,6 +684,7 @@ MonoBehaviour:
   dashSpeed: 30
   distanceBetweenImages: 0.1
   dashCoolDown: 2.5
+  dashCoolDowns: 0
   wallHopDirection: {x: 1, y: 0.5}
   wallJumpDirection: {x: 1, y: 2}
   groundCheck: {fileID: 4222171729632274524}
@@ -726,6 +728,7 @@ MonoBehaviour:
   maxHealth: 100
   deathChunkParticle: {fileID: 744604841242294605, guid: 8d70ddeb80aac8c488217bd0afbd287a, type: 3}
   deathBloodParticle: {fileID: 4172804419678935151, guid: 247a27ca4aff26c43a8b225440626fc0, type: 3}
+  currentHealth: 0
   healthBar: {fileID: 1091619528}
 --- !u!1 &4222171727958309856
 GameObject:

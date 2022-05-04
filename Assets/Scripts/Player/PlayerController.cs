@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTimer;
     private float turnTimer;
     private float WallJumpTimer;
+
 
     private float dashTimeLeft;
     private float lastImageXPos;
@@ -80,7 +82,11 @@ public class PlayerController : MonoBehaviour
     public float dashTime;
     public float dashSpeed;
     public float distanceBetweenImages;
+
+
+    public Image dashCooldownImage;
     public float dashCoolDown;
+    bool isCooldown = false;
 
 
     public Vector2 wallHopDirection;
@@ -97,6 +103,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        dashCooldownImage.fillAmount = 0;
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         amountOfJumpsLeft = amountOfJumps;
@@ -308,8 +316,22 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetButtonDown("Dash"))
         {
+            //isCooldown = true;
+            //dashCooldownImage.fillAmount = 1;
+
             if(Time.time >= (lastDash + dashCoolDown))
             AttemptToDash();
+        }
+
+        if(isCooldown)
+        {
+            dashCooldownImage.fillAmount -= 1 / dashCoolDown * Time.deltaTime;
+
+            if(dashCooldownImage.fillAmount <= 0)
+            {
+                dashCooldownImage.fillAmount = 0;
+                isCooldown = false;
+            }
         }
     }
 
@@ -336,10 +358,15 @@ public class PlayerController : MonoBehaviour
 
     private void CheckDash()
     {
+
+
         if(isDashing)
         {
             if(dashTimeLeft > 0)
             {
+                
+                isCooldown = true;
+                dashCooldownImage.fillAmount = 1;
                 canMove = false;
                 canFlip = false;
                 rb.velocity = new Vector2(dashSpeed * facingDirection, 0);
@@ -351,15 +378,16 @@ public class PlayerController : MonoBehaviour
                 lastImageXPos = transform.position.x;
                 }  
             }
+            
             if(dashTimeLeft <- 0 || isTouchingWall)
             {
+
                 isDashing = false;
                 canMove = true;
                 canFlip = true;
             }
         }       
     }
-
 
     private void CheckJump()
     {
