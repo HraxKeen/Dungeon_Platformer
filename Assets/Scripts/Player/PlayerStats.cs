@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,13 +14,15 @@ public class PlayerStats : MonoBehaviour
     private GameManager GM;
 
     public healthBar healthBar;
+    public bool key = false;
 
     private void Start() 
     {
+
         currentHealth = maxHealth;
-        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         healthBar.SetMaxHealth(maxHealth);
+
     }
     private void Update()
     {
@@ -64,5 +67,19 @@ public class PlayerStats : MonoBehaviour
             soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.heal);
             StartCoroutine(VisualIndicator(Color.green));
         }
+        if(other.gameObject.CompareTag("Key"))
+        {
+
+            other.gameObject.SetActive(false);
+            key = true;
+            soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.key);
+            StartCoroutine(VisualIndicator(Color.yellow));
+
+            if(key == true)
+            {
+                
+            }
+        }
+        
     }
 }

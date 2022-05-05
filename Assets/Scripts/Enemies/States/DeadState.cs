@@ -52,6 +52,7 @@ public class DeadState : State
             GameObject.Instantiate(stateData.dropItem, entity.aliveGO.transform.position, stateData.dropItem.transform.rotation);
             Debug.Log("Item!!");
         }
+        GameObject.Instantiate(stateData.dropItemKey, entity.aliveGO.transform.position, stateData.dropItemKey.transform.rotation);
         
     }
 
