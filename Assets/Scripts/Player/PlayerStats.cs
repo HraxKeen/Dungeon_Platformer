@@ -14,7 +14,9 @@ public class PlayerStats : MonoBehaviour
     private GameManager GM;
 
     public healthBar healthBar;
+
     public bool key = false;
+    
     public Image imageKey;
 
     private void Start() 
@@ -49,7 +51,9 @@ public class PlayerStats : MonoBehaviour
     {
         Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
         Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
+
         GM.Respawn();
+
         Destroy(gameObject);
 
     }
@@ -73,14 +77,12 @@ public class PlayerStats : MonoBehaviour
         {
 
             other.gameObject.SetActive(false);
+
+            imageKey.enabled = true;
+
             key = true;
             soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.key);
             StartCoroutine(VisualIndicator(Color.yellow));
-
-            if(key == true)
-            {
-                imageKey.enabled = true;
-            }
         }
         
     }

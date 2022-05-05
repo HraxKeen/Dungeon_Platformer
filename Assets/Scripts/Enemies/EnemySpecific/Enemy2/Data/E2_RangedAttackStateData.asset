@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726b513d0490da044a94adc7a0d52d73, type: 3}
-  m_Name: E2_MeleeAttackStateData
+  m_Script: {fileID: 11500000, guid: a76ea0f9970682443af905360eaf60ed, type: 3}
+  m_Name: E2_RangedAttackStateData
   m_EditorClassIdentifier: 
-  attackRadius: 0.7
-  attackDamage: 30
+  projectile: {fileID: 2211086240847566857, guid: 2ea7dcdf3ab9d1449b865748c6c98c38, type: 3}
+  projectileDamage: 30
+  projectileSpeed: 13
+  projectileTravelDistance: 8
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64

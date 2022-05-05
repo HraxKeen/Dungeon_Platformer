@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726b513d0490da044a94adc7a0d52d73, type: 3}
-  m_Name: E2_MeleeAttackStateData
+  m_Script: {fileID: 11500000, guid: 14bbd61ffe066084199bbd3cd7718118, type: 3}
+  m_Name: E2_DodgeStateData
   m_EditorClassIdentifier: 
-  attackRadius: 0.7
-  attackDamage: 30
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 64
+  dodgeSpeed: 20
+  dodgeTime: 0.2
+  dodgeCooldown: 2
+  dodgeAngle: {x: 2, y: 3}
