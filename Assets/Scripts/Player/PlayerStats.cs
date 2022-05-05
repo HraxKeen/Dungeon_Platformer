@@ -15,9 +15,11 @@ public class PlayerStats : MonoBehaviour
 
     public healthBar healthBar;
     public bool key = false;
+    public Image imageKey;
 
     private void Start() 
     {
+        imageKey.enabled = false;
 
         currentHealth = maxHealth;
 
@@ -77,7 +79,7 @@ public class PlayerStats : MonoBehaviour
 
             if(key == true)
             {
-                
+                imageKey.enabled = true;
             }
         }
         
