@@ -901,8 +901,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190275
-  m_fontColor: {r: 0.764151, g: 0, b: 0, a: 1}
+    rgba: 4278913939
+  m_fontColor: {r: 0.5764706, g: 0.043137256, b: 0.043137256, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1476,8 +1476,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190275
-  m_fontColor: {r: 0.764151, g: 0, b: 0, a: 1}
+    rgba: 4278848150
+  m_fontColor: {r: 0.5882353, g: 0.039215688, b: 0.039215688, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1977,8 +1977,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190275
-  m_fontColor: {r: 0.764151, g: 0, b: 0, a: 1}
+    rgba: 4278913684
+  m_fontColor: {r: 0.5803922, g: 0.039215688, b: 0.043137256, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2102,7 +2102,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Amazing game
+  m_text: 'Evil Things
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4563d12163009df4fac827a1577838fc, type: 2}
   m_sharedMaterial: {fileID: 7549352009720028312, guid: 4563d12163009df4fac827a1577838fc, type: 2}
@@ -2189,6 +2192,22 @@ PrefabInstance:
     - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
       propertyPath: m_margin.z
       value: -0.000072500414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278913939
       objectReference: {fileID: 0}
     - target: {fileID: 2621455303707667926, guid: 203242b3ee0e1554caebb2fcd3bcc2b1, type: 3}
       propertyPath: m_HorizontalAlignment

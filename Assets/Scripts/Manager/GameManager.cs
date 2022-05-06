@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;
-    [SerializeField] private GameObject player;
+    [SerializeField] public GameObject player;
     [SerializeField] private float respawnTime;
+
+    public static GameManager instance;
 
     private float respawnTimeStart = 5f;
 
-    private bool respawn;
+    private bool respawn = false;
 
     private CinemachineVirtualCamera CVC;
 
@@ -20,12 +23,12 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
-        CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
+        instance = this;
 
-        
+        CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();    
     }
 
-    private void Update() 
+    public void Update() 
     {
         CheckRespawn();
     }
@@ -33,9 +36,12 @@ public class GameManager : MonoBehaviour
     {
         respawnTime = Time.time;
         respawn = true;
+        SceneManager.LoadScene("_game");
+
     }
-    private void CheckRespawn()
+    public void CheckRespawn()
     {
+
         if(Time.time >= respawnTimeStart + respawnTime && respawn)
         {
             var playerTemp = Instantiate(player, respawnPoint);

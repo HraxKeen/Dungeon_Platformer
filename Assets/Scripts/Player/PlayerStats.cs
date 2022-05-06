@@ -52,7 +52,9 @@ public class PlayerStats : MonoBehaviour
         Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
         Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
 
-        GM.Respawn();
+        Debug.Log("Player Death");
+
+        GameManager.instance.Respawn();
 
         Destroy(gameObject);
 
@@ -77,12 +79,14 @@ public class PlayerStats : MonoBehaviour
         {
 
             other.gameObject.SetActive(false);
-
             imageKey.enabled = true;
-
             key = true;
             soundEffects.sfxInstance.Audio.PlayOneShot(soundEffects.sfxInstance.key);
             StartCoroutine(VisualIndicator(Color.yellow));
+        }
+        if(other.gameObject.CompareTag("trigger"))
+        {
+            key = false;
         }
         
     }

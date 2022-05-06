@@ -13,6 +13,7 @@ public class soundEffects : MonoBehaviour
     public AudioClip eHit;
     public AudioClip heal;
     public AudioClip key;
+    public AudioClip door;
 
 
     public static soundEffects sfxInstance;
